@@ -1,31 +1,27 @@
 import { Link as RLink } from "react-router-dom";
+import coreFuncs from "lib/core";
 
-const checkLink = (url) => (url.indexOf("http") === 0 ? true : false);
-// Fat Arrow Functions which means short hand for js functions
-// Ternary Statements or short hand for If else Shorthand in Js
-
-export default function Link(props) {
-  const { to, text, className, button, onClick } = props;
+export default function Link({to, children, className, button, onClick, }) {
   if (button) {
     if (onClick) {
       return (
         <button className={className} onClick={onClick}>
-          {text}
+          {children}
         </button>
       );
     }
-    return <button className={className}>{text}</button>;
+    return <button className={className}>{children}</button>;
   }
-  if (!checkLink(to))
+  if (!coreFuncs.checkLink(to))
     return (
       <RLink to={to} className={className}>
-        {text}
+        {children}
       </RLink>
     );
 
   return (
     <a href={to} target="_blank" rel="noreferrer" className={className}>
-      {text}
+      {children}
     </a>
   );
 }
