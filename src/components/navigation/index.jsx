@@ -6,8 +6,6 @@ export default function Navigation() {
   return (
     <>
       <ApexNavigation />
-      <h2>This is the Navigation Index</h2>
-      <Logo />
       <InfoNavigation />
     </>
   );

@@ -1,7 +1,11 @@
-import { Image, Link } from 'components'
+import { Image, Link } from "components";
 
-export default function Logo({width, height}){    
-    return (
-        <Link to="/" className="nav-link"><Image src="https://bityl.co/EMUO" alt="This be da logo mon!" className="img-fluid" width={width} height={height}/> Company Logo</Link>
-    )
+export default function Logo({ width, height }) {
+  return (
+    <div className="brand">
+      <Link to="/" className="navbar-brand">
+        <Image src="https://www.aazizandco.co.uk/assets/logo/aaziz.svg" width="250px" />
+      </Link>
+    </div>
+  );
 }
