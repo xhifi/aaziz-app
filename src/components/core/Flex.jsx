@@ -10,6 +10,6 @@ const checkCenter = (input) => {
   if (input === "items") return "d-flex align-items-center";
   if (input === "content") return "d-flex justify-content-center";
   if (input || input === "") return "d-flex align-items-center justify-content-center";
-  return "";
+  if (!input) return "";
 };
 export default Flex;

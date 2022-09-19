@@ -9,7 +9,7 @@ export default function ApexNavigation() {
 
   return (
     <Container fluid className="px-4 my-0 border-bottom py-2">
-      <Flex flush center="items">
+      <Flex center="items">
         <Logo />
         <nav className="nav d-flex align-items-center ms-auto">
           <ListComponent list={dataBase.navigationData} />

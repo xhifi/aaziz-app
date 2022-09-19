@@ -10,7 +10,7 @@ const details = [
 export default function Footer() {
   return (
     <Container className="px-4" fluid>
-      <Flex cols={3} center="items">
+      <Flex cols={3}>
         {/* <LogoColumn /> */}
         <FooterList details={details} />
         <FooterList details={details} />
