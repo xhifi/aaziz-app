@@ -1,0 +1,15 @@
+{
+  "siteMetaData": {
+    "name": "AAziz & Co. Accountants and Tax Consultants",
+    "siteDescription": "Accountants for you baby!"
+  },
+  "authorDetails": [],
+  "services": {},
+
+  "navigationData": [
+    { "name": "Home", "link": "/" },
+    { "name": "About", "link": "/about" },
+    { "name": "Blog", "link": "/blog" },
+    { "name": "Contact", "link": "/contact" }
+  ]
+}

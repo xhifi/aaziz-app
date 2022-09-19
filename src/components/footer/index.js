@@ -1,12 +1,21 @@
 import FooterList from "./FooterList";
-import LogoColumn from "./LogoColumn";
+// import LogoColumn from "./LogoColumn";
+import { Flex, Container } from "components";
+
+const details = [
+  { name: "Home", ref: "/" },
+  { name: "About", ref: "/about" },
+];
 
 export default function Footer() {
   return (
-    <>
-      <h3>This is the Footer Index</h3>
-      <LogoColumn />
-      <FooterList />
-    </>
+    <Container className="px-4" fluid>
+      <Flex cols={3} center="items">
+        {/* <LogoColumn /> */}
+        <FooterList details={details} />
+        <FooterList details={details} />
+        <FooterList details={details} />
+      </Flex>
+    </Container>
   );
 }
