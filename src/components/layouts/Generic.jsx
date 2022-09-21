@@ -1,4 +1,4 @@
-import { Navigation, Footer, Container } from "components";
+import { Navigation, Footer } from "components";
 
 export default function Generic({ children }) {
   return (
