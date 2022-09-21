@@ -1,17 +1,25 @@
-import { GenericLayout, Link } from "components";
+import { Container, GenericLayout } from "components";
+import { Card, Flex } from "components";
 
 export default function Home() {
+  const breakPoints = { sm: 1, md: 2, lg: 4, xlg: 5 };
   return (
     <GenericLayout>
-      <Link to="/about" text="About Page" icon="mailbox" className="btn btn-sm btn-primary">
-        About Button
-      </Link>
-      <Link to="https://www.google.com" text="Google" icon="home" className="btn btn-lg btn-success">
-        Google
-      </Link>
-      <Link text="Greeting on Click" className="btn btn-sm btn-info" button>
-        Greetings
-      </Link>
+      <Container fluid className="px-4 py-0">
+        <Flex center="" cols={1} breakPoints={breakPoints} className="row-cols-1 row-cols-md-2 row-cols-lg-4">
+          <Card
+            className="p-3"
+            type="stacker"
+            options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }}
+          />
+          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+        </Flex>
+      </Container>
     </GenericLayout>
   );
 }

@@ -1,3 +1,16 @@
+import { Logo } from "components";
+
 export default function LogoColumn() {
-  return <h3>This is the Logo Column</h3>;
+  return (
+    <div>
+      <Logo />
+      <p>
+        Contact info goes here
+        <br />
+        address goes here
+        <br />
+        Something else goes here
+      </p>
+    </div>
+  );
 }

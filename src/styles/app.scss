@@ -1,8 +1,18 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
+body {
+  font-family: "Raleway", sans-serif;
+}
 .active {
   color: red !important;
 }
 .bi {
   margin-right: 0.5rem;
+}
+.card-btn {
+  width: 50%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+  }
 }
