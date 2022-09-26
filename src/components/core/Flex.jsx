@@ -35,7 +35,7 @@ function Flex({ children, cols, center, breakPoints, gutter, ...rest }) {
   console.log(gutter);
 
   return (
-    <div {...rest} className={`${checkCenter(center)}`}>
+    <div {...rest} className={`aa-flex ${checkCenter(center)}`}>
       {cols <= 9 && cols >= 1 ? <div className={`row row-cols-${cols || 1} ${bpEval(breakPoints)} ${checkGutter(gutter).toString()}`}>{children}</div> : children}
     </div>
   );

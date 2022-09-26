@@ -1,0 +1,83 @@
+// Navigation Styles
+// Mobile First
+@include media-breakpoint-down(md) {
+  .apex-navigation-container {
+    .aa-flex {
+      align-items: flex-start !important;
+      flex-direction: column;
+      a.aaziz-brand {
+      }
+      .apex-navigation-nav {
+        margin-right: 100% !important;
+        width: 100% !important;
+        margin: 12px 0px;
+        ul {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          li {
+            width: 100% !important;
+            color: black !important;
+            transition: none !important;
+            margin-top: 3px;
+            &:hover {
+              background-color: $primary !important;
+              border-radius: 0.5rem;
+              color: white !important;
+            }
+            a {
+              padding: 7px !important;
+              margin: 3px 0px;
+              display: block !important;
+              transition: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop
+.apex-navigation-container {
+  @extend .container-fluid, .px-4, .py-2, .my-0, .shadow;
+  .brand {
+  }
+  nav {
+    @extend .d-flex, .align-items-center, .ms-auto;
+    ul {
+      @extend .mb-0, .list-unstyled, .d-flex, .align-items-center;
+      li {
+        @extend .me-2;
+        a {
+          @extend .py-1, .px-2, .rounded;
+          &:hover {
+            background-color: $primary !important;
+            border-radius: 0.5rem;
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Info Navigation
+// Mobile First
+@include media-breakpoint-down(md) {
+  .aa-info-nav-container {
+    display: none !important;
+  }
+}
+// Desktop
+.aa-info-nav-container {
+  .aa-flex {
+    ul {
+      @extend .d-flex, .align-items-center;
+      li {
+        a {
+        }
+      }
+    }
+  }
+}

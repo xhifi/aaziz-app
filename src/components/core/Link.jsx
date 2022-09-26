@@ -2,18 +2,18 @@ import { Link as RLink } from "react-router-dom";
 import coreFuncs from "lib/core";
 import Icon from "./Icon";
 
-export default function Link({ to, children, className, button, onClick, icon }) {
+export default function Link({ children, to, className, button, onClick, icon, ...rest }) {
   if (button) {
     if (onClick) {
       return (
-        <button className={className} onClick={onClick}>
+        <button onClick={onClick} {...rest} className={`aa-btn ${className}`}>
           {icon && <Icon of={icon} />}
           {children}
         </button>
       );
     }
     return (
-      <button className={className}>
+      <button {...rest} className={`aa-btn ${className}`}>
         {icon && <Icon of={icon} />}
         {children}
       </button>
@@ -21,14 +21,14 @@ export default function Link({ to, children, className, button, onClick, icon })
   }
   if (!coreFuncs.checkLink(to))
     return (
-      <RLink to={to} className={className}>
+      <RLink to={to} {...rest} className={`aa-link ${className}`}>
         {icon && <Icon of={icon} />}
         {children}
       </RLink>
     );
 
   return (
-    <a href={to} target="_blank" rel="noreferrer" className={className}>
+    <a href={to} target="_blank" rel="noreferrer" {...rest} className={`aa-link ${className}`}>
       {icon && <Icon of={icon} />}
       {children}
     </a>

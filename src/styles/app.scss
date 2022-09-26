@@ -1,9 +1,22 @@
+$primary: #9b0000;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "flex";
+@import "icon";
+@import "image";
+@import "link";
+@import "logo";
+@import "navigation";
+
 body {
   font-family: "Raleway", sans-serif;
 }
 .active {
-  color: red !important;
+  background-color: $primary !important;
+  color: $white !important;
+  @extend .rounded;
+  a {
+    color: $white !important;
+  }
 }
 .bi {
   margin-right: 0.5rem;

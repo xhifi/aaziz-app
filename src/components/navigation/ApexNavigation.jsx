@@ -1,19 +1,24 @@
-import { Container, Flex, Logo } from "components";
-// import useFetch from "lib/fetch";
+import { Container, Flex, Link, Logo } from "components";
 
 import ListComponent from "./ListComponent";
 import dataBase from "data/dataBase.json";
 
 export default function ApexNavigation() {
-  // const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
-
   return (
-    <Container fluid className="px-4 my-0 border-bottom py-2">
+    <Container fluid className="apex-navigation-container">
       <Flex center="items">
-        <Logo />
-        <nav className="nav d-flex align-items-center ms-auto">
+        <Logo className="aaziz-brand" />
+        <nav className="apex-navigation-nav">
           <ListComponent list={dataBase.navigationData} />
         </nav>
+        <div>
+          <Link to="/signin" className="me-3 fw-bold text-decoration-none">
+            Sign In
+          </Link>
+          <Link button className="btn btn-primary btn-lg">
+            Sign Up
+          </Link>
+        </div>
       </Flex>
     </Container>
   );
