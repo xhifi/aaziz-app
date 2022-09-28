@@ -7,7 +7,7 @@ export default function Card({ type, options, children }) {
   }
   if (type === "numbered") {
     return (
-      <Numbered heading={options.heading} description={options.description}>
+      <Numbered heading={options.heading} description={options.description} number={options.number}>
         {children}
       </Numbered>
     );

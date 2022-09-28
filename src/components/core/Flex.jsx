@@ -8,6 +8,17 @@ const checkCenter = (input) => {
   if (!input) return "";
 };
 
+const checkJustification = (input) => {
+  if (input) {
+    if (input === "start") return `justify-content-start`;
+    if (input === "center") return `justify-content-center`;
+    if (input === "end") return `justify-content-end`;
+    if (input === "between") return `justify-content-between`;
+    return ``;
+  }
+  return ``;
+};
+
 const bpEval = (input = {}) => {
   return Object.entries(input)
     .map((v) => `row-cols-${v[0]}-${v[1]}`)
@@ -31,12 +42,16 @@ const checkGutter = (input) => {
   return res;
 };
 
-function Flex({ children, cols, center, breakPoints, gutter, ...rest }) {
-  console.log(gutter);
-
+function Flex({ children, cols, center, breakPoints, gutter, rowCenter, justify, ...rest }) {
   return (
     <div {...rest} className={`aa-flex ${checkCenter(center)}`}>
-      {cols <= 9 && cols >= 1 ? <div className={`row row-cols-${cols || 1} ${bpEval(breakPoints)} ${checkGutter(gutter).toString()}`}>{children}</div> : children}
+      {cols <= 9 && cols >= 1 ? (
+        <div className={`row row-cols-${cols || 1} ${bpEval(breakPoints)} ${checkGutter(gutter).toString()} ${rowCenter && checkCenter(rowCenter)} ${checkJustification(justify)}`}>
+          {children}
+        </div>
+      ) : (
+        children
+      )}
     </div>
   );
 }

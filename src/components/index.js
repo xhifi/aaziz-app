@@ -10,9 +10,10 @@ import Container from "./core/Container";
 import Flex from "./core/Flex";
 
 import Card from "./card";
+import Presentation from "./presentation";
 
 //Main Components
 import Navigation from "./navigation";
 import Footer from "./footer";
 
-export { GenericLayout, Link, Navigation, Footer, Logo, Image, Container, Flex, Card, Icon };
+export { GenericLayout, Link, Navigation, Footer, Logo, Image, Container, Flex, Card, Icon, Presentation };

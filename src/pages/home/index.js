@@ -1,5 +1,47 @@
 import { Container, GenericLayout } from "components";
-import { Card, Flex } from "components";
+import { Card, Flex, Presentation } from "components";
+
+const numberedMock = [
+  {
+    heading: "Credible Team Network",
+    description:
+      "Our team is comprised of qualified accountants, who have valuable experience in advising, monitoring, and coordinating with clients to make sure that all necessary regulatory requirements are fulfilled.",
+  },
+  {
+    heading: "Modern Infrastructure",
+    description:
+      "We are a friendly & approachable, independent registered firm of Professional accountants, operating from welcoming offices suited with most cutting edge and digital infrastructure we can find in this line of work.",
+  },
+  {
+    heading: "Diverse Abilities",
+    description:
+      "We deal with every aspect of your tax, ranging from the preparation and submission of your self-assessment tax returns to pro-actively managing your tax affairs for partnerships, Limited companies and contractorship.",
+  },
+  {
+    heading: "Professional Work Ethics",
+    description:
+      "Aziz and Co has the ability to offer comprehensive tailor-made solutions to its diversified clientele with utmost professionalism. We don't consider any job small and give our whole to any and every client.",
+  },
+  {
+    heading: "Always Meeting the Deadlines",
+    description: "Our highly experienced and skilled management team of SFA is capable of performing complex and daunting tasks seamlessly while meeting tight deadlines.",
+  },
+  {
+    heading: "Long Term Relationships",
+    description:
+      "Our team is focused on building long-term relationships and craft practical, and affordable solutions for the best interest of our respectable clients. You won't believe it but we hold 5.0 Star rating on our Google Profile.",
+  },
+  {
+    heading: "Long Term Relationships",
+    description:
+      "Our team is focused on building long-term relationships and craft practical, and affordable solutions for the best interest of our respectable clients. You won't believe it but we hold 5.0 Star rating on our Google Profile.",
+  },
+  {
+    heading: "Long Term Relationships",
+    description:
+      "Our team is focused on building long-term relationships and craft practical, and affordable solutions for the best interest of our respectable clients. You won't believe it but we hold 5.0 Star rating on our Google Profile.",
+  },
+];
 
 export default function Home() {
   const breakPoints = { sm: 1, md: 2, lg: 4, xlg: 5 };
@@ -7,27 +49,31 @@ export default function Home() {
     <GenericLayout>
       <Container fluid className="px-4 py-0 my-5">
         <Flex center cols={1} breakPoints={breakPoints} className="row-cols-1 row-cols-md-2 row-cols-lg-4">
-          <Card
-            className="p-3"
-            type="stacker"
-            options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }}
-          />
-          <Card
-            type="stacker"
-            options={{
-              heading: "Hello Hello Dirty Fellow",
-              description:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-              icon: "google",
-              button: { name: "Read More", ref: "/contact" },
-            }}
-          />
-          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
-          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google" }} />
-          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
-          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
-          <Card type="stacker" options={{ heading: "Hello Hello Dirty Fellow", description: "Lorem 30", icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+          {numberedMock.map((v, i) => {
+            return (
+              <Card className="p-3" type="stacker" options={{ heading: v.heading, description: v.description, icon: "google", button: { name: "Read More", ref: "/contact" } }} />
+            );
+          })}
         </Flex>
+      </Container>
+      <Container className="px-0 py-0 my-5">
+        <Flex gutter={0} center="content" cols={1} breakPoints={breakPoints} className="row-cols-1 row-cols-md-2 row-cols-lg-4">
+          {numberedMock.map((v, i) => {
+            return <Card key={i} type="numbered" options={{ heading: v.heading, description: v.description, number: i + 1 }} />;
+          })}
+        </Flex>
+      </Container>
+      <Container className="">
+        {numberedMock.map((v, i) => {
+          return (
+            <div className="mb-5">
+              <Presentation direction={i % 2 !== 0 ? "left" : "right"} image="https://bityl.co/El5u" className="mb-3">
+                <h3>{v.heading}</h3>
+                <p className="mb-0">{v.description}</p>
+              </Presentation>
+            </div>
+          );
+        })}
       </Container>
     </GenericLayout>
   );

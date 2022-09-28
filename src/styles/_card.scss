@@ -1,0 +1,49 @@
+.numbered-index {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.aa-numbered-card {
+  @extend .col;
+  div {
+    @extend .card, .h-100, .p-4, .rounded-0, .border-primary;
+    span {
+      @extend .numbered-index;
+    }
+    p {
+      @extend .h4;
+    }
+  }
+}
+
+.aa-numbered-card {
+}
+
+.aa-numbered-card {
+  &:nth-child(4n + 1) {
+    .aa-dynamic {
+      @extend .border-start-0;
+    }
+  }
+  &:nth-child(4n + 0) {
+    .aa-dynamic {
+      @extend .border-end-0;
+    }
+  }
+  &:not(&:nth-last-child(-n + 4)) {
+    border-color: $primary !important;
+    @extend .border-1;
+  }
+
+  &:nth-child(-n + 4) {
+    .aa-dynamic {
+      @extend .border-top-0;
+    }
+  }
+
+  &:nth-last-child(-n + 4) {
+    .aa-dynamic {
+      @extend .border-bottom-0;
+    }
+  }
+}
