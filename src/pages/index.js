@@ -3,6 +3,6 @@ import About from "./about";
 import Services from "./services";
 import Blog from "./blog";
 import Contact from "./contact";
-import Error404 from "./404";
+import Error from "./Error";
 
-export { Home, About, Services, Blog, Contact, Error404 };
+export { Home, About, Services, Blog, Contact, Error };

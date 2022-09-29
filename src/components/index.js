@@ -8,6 +8,7 @@ import Icon from "./core/Icon";
 import Image from "./core/Image";
 import Container from "./core/Container";
 import Flex from "./core/Flex";
+import Divider from "./core/Divider";
 
 import Card from "./card";
 import Presentation from "./presentation";
@@ -16,4 +17,4 @@ import Presentation from "./presentation";
 import Navigation from "./navigation";
 import Footer from "./footer";
 
-export { GenericLayout, Link, Navigation, Footer, Logo, Image, Container, Flex, Card, Icon, Presentation };
+export { GenericLayout, Link, Navigation, Footer, Logo, Image, Container, Flex, Card, Icon, Presentation, Divider };

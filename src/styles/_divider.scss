@@ -1,0 +1,46 @@
+.aa-divider {
+  $d-width: 120px;
+  @extend .container, .text-center, .h2, .fw-bold, .position-relative;
+  &:before {
+    @extend .position-absolute, .d-block;
+    content: "";
+    width: $d-width;
+    height: 1px;
+    background: #eee;
+    bottom: -15px;
+    left: calc(50% - ($d-width / 2));
+  }
+  &:after {
+    @extend .position-absolute, .d-block;
+    content: "";
+    width: calc($d-width / 2);
+    height: 3px;
+    bottom: -16px;
+    left: calc(50% - ($d-width / 4));
+    background-color: $primary;
+  }
+}
+
+.aa-divider-nis {
+  $d-width: 400px;
+  @extend .container, .text-center, .h2, .fw-bold, .position-relative;
+  &:before {
+    @extend .position-absolute, .d-block;
+    content: "";
+    width: $d-width;
+    height: 1px;
+    background: #eee;
+    left: calc(50% - ($d-width / 2));
+    right: calc(50% + ($d-width / 4));
+  }
+  &:after {
+    @extend .position-absolute, .d-block;
+    content: "";
+    width: calc($d-width / 2);
+    height: 3px;
+    bottom: -2px;
+    left: calc(50% - ($d-width / 4));
+    right: calc(50% + ($d-width / 4));
+    background-color: $primary;
+  }
+}

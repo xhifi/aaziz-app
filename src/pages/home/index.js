@@ -1,4 +1,4 @@
-import { Container, GenericLayout, Link } from "components";
+import { Container, GenericLayout, Link, Divider } from "components";
 import { Card, Flex, Presentation } from "components";
 
 const numberedMock = [
@@ -65,6 +65,9 @@ export default function Home() {
           })}
         </Flex>
       </Container>
+
+      <Divider heading="WE PROVIDE FREE BASIC TRAINING TO USE ACCOUNTING SOFTWARE TO OUR CLIENTS- SOFTWARE LIKE QUICK BOOK, SAGE AND XERO ETC." />
+
       <Container fluid className="px-5 py-5">
         <Flex gutter={0} center="content" cols={1} breakPoints={breakPoints} className="row-cols-1 row-cols-md-2 row-cols-lg-4">
           {numberedMock.map((v, i) => {
@@ -72,6 +75,7 @@ export default function Home() {
           })}
         </Flex>
       </Container>
+
       <Container fluid className="px-5 py-5">
         {numberedMock.map((v, i) => {
           return (
@@ -89,6 +93,7 @@ export default function Home() {
           );
         })}
       </Container>
+
       <Container fluid className="px-5 py-5">
         <Flex cols="4" gutter={3} rowCenter="items">
           <Card type="team" options={{ title: "Ajmal Baig", designation: "Director", social: { facebook: "ajmal", twitter: "ajmal", linkedin: "ajmal" } }} />
