@@ -5,7 +5,7 @@ import dataBase from "data/dataBase.json";
 
 export default function ApexNavigation() {
   return (
-    <Container fluid className="apex-navigation-container">
+    <Container fluid className="apex-navigation-container sticky-top bg-light">
       <Flex center="items">
         <Logo className="aaziz-brand" />
         <nav className="apex-navigation-nav">

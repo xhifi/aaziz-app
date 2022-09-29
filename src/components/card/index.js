@@ -1,5 +1,6 @@
 import Stacker from "./Stacker";
 import Numbered from "./Numbered";
+import Team from "./Team";
 
 export default function Card({ type, options, children }) {
   if (type === "stacker") {
@@ -11,6 +12,9 @@ export default function Card({ type, options, children }) {
         {children}
       </Numbered>
     );
+  }
+  if (type === "team") {
+    return <Team title={options?.title} designation={options?.designation} image={options?.image} social={options?.social} />;
   }
   return;
 }
