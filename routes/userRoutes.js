@@ -3,19 +3,16 @@ const verifyJWT = require("../middlewares/auth/verifyJWT");
 const verifyRoles = require("../middlewares/auth/verifyRoles");
 
 const {
-  deleteAll,
   getAll,
-  updateAll,
   deleteById,
   getById,
   updateById,
+  assignRole,
 } = require("../controllers/userController");
 
-router
-  .route("/")
-  .get(verifyJWT, verifyRoles, getAll)
-  .put(updateAll)
-  .delete(deleteAll);
+router.route("/").get(verifyJWT, verifyRoles, getAll);
+
 router.route("/:id").get(getById).put(updateById).delete(deleteById);
+router.route("/assign-roles/:id").put(verifyJWT, verifyRoles, assignRole);
 
 module.exports = router;
