@@ -10,6 +10,10 @@ const ForbiddenRequestError = require("../../errors/ForbiddenRequestError");
 const UnauthorizedError = require("../../errors/UnauthorizedError");
 const NotFoundError = require("../../errors/NotFoundError");
 
+// @route DELETE /api/users/:id
+// @desc Delete user
+// @access Private
+// @param {string}
 const deleteUser = (req, res) => {
   res.status(200).send({ msg: "Delete user route accessed" });
 };

@@ -16,6 +16,7 @@ app.use(require("cookie-parser")());
 
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/u", require("./routes/userRoutes"));
+app.use("/api/v1/c", require("./routes/companiesRouter"));
 
 app.use(errorHandler);
 app.use(notFound);

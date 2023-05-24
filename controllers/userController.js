@@ -27,36 +27,35 @@ const assignRole = async (req, res) => {
 
   const requiredRole = req.body.role;
   const userToUpdate = req.params.id;
-
+  // If user assigns role to self disallow
   if (userToUpdate === req.user.userId) {
     throw new UnauthorizedError("You can't change your own role");
   }
-
+  // Check if the user to update exists in db
   const {
     rows: [userToUpdateExists],
   } = await db.query(
     `SELECT users.name as user_name, email, users.id as user_id, users.created_at, users.updated_at, role, roles.name as role_name, permissions, weight FROM users FULL JOIN roles ON users.role = roles.id WHERE users.id = $1`,
     [userToUpdate]
   );
-
-  const {
-    rows: [requiredRoleExists],
-  } = await db.query(`SELECT * FROM roles WHERE name = $1`, [requiredRole]);
-
   if (!userToUpdateExists) {
     throw new NotFoundError("Provided ID user doesn't exist");
   }
+
+  // Check if role to give exists in the db
+  const {
+    rows: [requiredRoleExists],
+  } = await db.query(`SELECT * FROM roles WHERE name = $1`, [requiredRole]);
 
   if (!requiredRoleExists) {
     throw new BadRequestError(
       "Provided role is not acceptable as a valid role"
     );
   }
-
+  // Check if the user to update's role weight is greater or equal than the person assigning the role
   if (userToUpdateExists.weight >= req.user.role.weight) {
     throw new UnauthorizedError("You can't change roles of your superiors");
   }
-
   if (req.user.role.weight <= requiredRoleExists.weight) {
     throw new BadRequestError(
       "You must have higher role than what you want to assign"
