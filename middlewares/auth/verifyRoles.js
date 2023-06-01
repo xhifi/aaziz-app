@@ -3,7 +3,13 @@ const UnauthorizedError = require("../../errors/UnauthorizedError");
 
 const checkRoles = async (req, res, next) => {
   const userRolesQuery = await db.query(
-    `SELECT users.id as user_id, role as role_id, roles.name as role_name, roles.permissions as permissions, roles.weight as role_weight FROM users LEFT JOIN roles ON users.role = roles.id WHERE users.id = $1`,
+    `SELECT 
+      users.id as user_id, 
+      role as role_id, 
+      roles.name as role_name, 
+      roles.permissions as permissions, 
+      roles.weight as role_weight FROM users
+      LEFT JOIN roles ON users.role = roles.id WHERE users.id = $1;`,
     [req.user.userId]
   );
 
