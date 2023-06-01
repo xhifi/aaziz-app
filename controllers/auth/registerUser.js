@@ -22,7 +22,7 @@ const registerUser = async (req, res) => {
   );
   const user = newUser.rows[0];
   const accessToken = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
-  res.status(StatusCodes.OK).json({ accessToken });
+  res.status(StatusCodes.CREATED).json({ accessToken });
 };
 
 module.exports = registerUser;
