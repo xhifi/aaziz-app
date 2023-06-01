@@ -4,7 +4,7 @@ const db = require("../../utils/db");
 const getCompany = async (req, res) => {
   const user = req.user;
   const { company_number } = req.params;
-  console.log(user);
+
   if (user.role.weight < 500) {
     return res
       .status(StatusCodes.FORBIDDEN)
