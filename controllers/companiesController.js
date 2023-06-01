@@ -1,5 +1,13 @@
-const addLocalCompany = require("./companies/addLocalCompany");
+const addCompany = require("./companies/addCompany");
 const getAllCompanies = require("./companies/getAllCompanies");
 const deleteCompany = require("./companies/deleteCompnay");
+const getCompany = require("./companies/getCompany");
+const updateCompany = require("./companies/updateCompany");
 
-module.exports = { getAllCompanies, addLocalCompany, deleteCompany };
+module.exports = {
+  getAllCompanies,
+  addCompany,
+  deleteCompany,
+  getCompany,
+  updateCompany,
+};
