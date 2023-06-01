@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 const { UnauthorizedError } = require("../../errors");
 const db = require("../../utils/db");
 
-const addLocalCompany = async (req, res) => {
+const addCompany = async (req, res) => {
   const {
     name,
     email,
@@ -48,4 +48,4 @@ const addLocalCompany = async (req, res) => {
   });
 };
 
-module.exports = addLocalCompany;
+module.exports = addCompany;
